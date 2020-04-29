@@ -1,4 +1,4 @@
-const API_URL = "http://localhost/api"
+const API_URL = "/api";
 
 function checkPasswordsMatch() {
     let pw = $("#signUpPassword");
