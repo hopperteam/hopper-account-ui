@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title></title>
+    <style>@import url(https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800&display=swap);</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="index.js"></script>
+</head>
+<body>
+<div id="root">
+    <div id="loginSignUpTabbedView">
+        <div id="loginSignUpTabs">
+            <button id="loginTab" class="active" onclick="clickLoginTab()">Login</button>
+            <button id="signUpTab" class="" onclick="clickSignUpTab()">Sign Up</button>
+        </div>
+        <div id="loginView">
+            <form target="#" id="loginForm" onsubmit="return loginClick()">
+                <span id="loginFailed" style="display: none">Login failed!</span>
+                <input name="email" placeholder="username" type="text" id="email" />
+                <input name="password" placeholder="password" type="password" id="password" />
+                <input type="submit" id="loginButton" value="Login" />
+            </form>
+            <form target="#" style="display: none" id="signUpForm" onsubmit="return signUpClick()">
+                <span id="signUpFailed" style="display: none">There is already an account with that email!</span>
+                <input name="email" required="" placeholder="E-Mail" type="email" id="signUpEmail" />
+                <input name="password" required="" placeholder="Password" type="password" id="signUpPassword"
+                       oninput="checkPasswordsMatch()"/>
+                <input id="repeatedPassword" required="" name="repeatedPassword" placeholder="Repeat Password"
+                       type="password" value="" oninput="checkPasswordsMatch()" />
+                <input name="fName" required="" placeholder="First Name" type="text" value="" id="signUpFirstName" />
+                <input name="lName" required="" placeholder="Last Name" type="text" value="" id="signUpLastName" />
+                <input type="submit" id="signUpButton" value="Sign Up" />
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

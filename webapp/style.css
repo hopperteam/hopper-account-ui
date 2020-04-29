@@ -1,0 +1,187 @@
+* {
+    font-family: 'Muli', sans-serif
+}
+
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0
+}
+
+#root {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+@media (min-width: 40em) {
+    #root {
+        background-image: url(img/background/bg-1920.jpg)
+    }
+}
+
+@media (min-width: 40em) and (min-width: 2000px) {
+    #root {
+        background-image: url(img/background/bg-6000.jpg)
+    }
+}
+
+#loginSignUpTabbedView {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 13;
+    background: white;
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    overflow: hidden
+}
+
+@media (min-width: 40em) {
+    #loginSignUpTabbedView {
+        grid-column-start: 3;
+        grid-column-end: 11
+    }
+}
+
+@media (min-width: 80em) {
+    #loginSignUpTabbedView {
+        grid-column-start: 4;
+        grid-column-end: 10
+    }
+}
+
+@media (min-width: 40em) {
+    #loginSignUpTabbedView {
+        grid-row-start: 3;
+        grid-row-end: 11
+    }
+}
+
+@media (min-height: 60em) {
+    #loginSignUpTabbedView {
+        grid-row-start: 4;
+        grid-row-end: 10
+    }
+}
+
+@media (min-width: 40em) {
+    #loginSignUpTabbedView {
+        box-shadow: 0 0 15px 0 #000000;
+        border-radius: 4px
+    }
+}
+
+#loginSignUpTabbedView::before {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    content: '';
+    background-image: url(img/logo_white.svg), linear-gradient(to right, #00c08a, #00ca9a);
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-origin: content-box, border-box;
+    box-sizing: border-box
+}
+
+#loginSignUpTabs {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 4;
+    grid-row-end: 6
+}
+
+#loginView {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 6;
+    grid-row-end: 13
+}
+
+#loginView > form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(7, 1fr)
+}
+
+#loginView > form > input {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    margin: 4px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 8px;
+    outline: none;
+    transition: border-bottom-color .1s, border-left-color .1s, border-top-color .1s, border-right-color .1s
+}
+
+#loginView > form > input:focus {
+    border: 1px solid #00bd84
+}
+
+#loginView > form > input.invalid {
+    border: 1px solid #ff5555;
+}
+
+#loginView > form > input[type="submit"] {
+    border: none;
+    border-radius: 0;
+    background: #00bd84;
+    cursor: pointer;
+    transition: background-color .1s
+}
+
+#loginView > form > input[type="submit"]:hover {
+    background-color: #008a60
+}
+
+#loginFailed {
+    grid-column-start: 2;
+    grid-column-end: 12
+}
+
+#signUpFailed {
+    grid-column-start: 2;
+    grid-column-end: 12
+}
+
+#loginSignUpTabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+}
+
+#loginTab {
+    grid-column-start: 1;
+    grid-column-end: 1
+}
+
+#signUpTab {
+    grid-column-start: 2;
+    grid-column-end: 2
+}
+
+#loginSignUpTabs > button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .8em;
+    margin-left: 10%;
+    margin-right: 10%
+}
+
+#loginSignUpTabs > button.active {
+    text-decoration: underline;
+    font-weight: 800;
+    color: #00bd84
+}
+
