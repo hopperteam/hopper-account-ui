@@ -1,7 +1,5 @@
 import * as React from "react";
 import * as ReactDOM from 'react-dom';
-import LoadingView from "components/loadingView"
-//import {HopperApi, IHopperApi} from "./api/hopperApi";
 import LoginSignUpView from "./components/loginSignUpView";
 import "style/login.scss";
 import {AccountApi} from "./api/accountApi";
