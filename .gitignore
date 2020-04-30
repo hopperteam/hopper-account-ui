@@ -1,1 +1,4 @@
 .idea/
+localFiles
+node_modules
+.build
