@@ -17,12 +17,12 @@ function render(api: AccountApi) {
 
 function loginComplete(api: AccountApi) {
 
-    let redirect = HopperUtil.getUrlParameter("redirect");
+    let redirect = HopperUtil.getUrlParameter("target");
     if (redirect && typeof(redirect) === 'string') {
         document.location.assign(redirect);
         return;
     }
-    document.location.assign("/app");
+    document.location.assign("/overview");
 }
 
 async function main() {
