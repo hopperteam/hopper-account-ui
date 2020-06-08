@@ -1,5 +1,13 @@
 import RestfulApi from "./restfulApi";
 
+export type User = {
+    id: string,
+    firstName: string,
+    lastName: string,
+    eMail: string,
+    roles: string[]
+}
+
 export class AccountApi extends RestfulApi {
 
     constructor() {
@@ -11,7 +19,13 @@ export class AccountApi extends RestfulApi {
             "email": email,
             "password": password
         });
-        console.log(res)
+
+        return (res.status == 200 && res.result.status == "success")
+    }
+
+    async logout(): Promise<boolean> {
+        let res = await this.post("/logout", {})
+
         return (res.status == 200 && res.result.status == "success")
     }
 
@@ -29,5 +43,13 @@ export class AccountApi extends RestfulApi {
             error = res.result.reason;
         }
         return [success, error]
+    }
+
+    async getUser(): Promise<User | null> {
+        let res = await this.get("/user");
+        if (!(res.status == 200 && res.result.status == "success")) {
+            return null;
+        }
+        return res.result;
     }
 }

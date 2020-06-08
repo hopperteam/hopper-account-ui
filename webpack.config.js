@@ -5,6 +5,7 @@ const path = require('path');
 module.exports = {
     entry: {
         login: './src/loginApp.tsx',
+        logout: './src/logoutApp.tsx',
     },
     plugins: [
         new CleanWebpackPlugin({
@@ -14,6 +15,11 @@ module.exports = {
             template: 'src/templates/index.html',
             filename: 'index.html',
             chunks: ['login']
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/templates/index.html',
+            filename: 'logout.html',
+            chunks: ['logout']
         }),
     ],
     output: {
