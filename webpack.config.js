@@ -21,6 +21,11 @@ module.exports = {
             filename: 'logout.html',
             chunks: ['logout']
         }),
+        new HtmlWebpackPlugin({
+            template: 'src/templates/index.html',
+            filename: 'user.html',
+            chunks: ['login']
+        }),
     ],
     output: {
         path: __dirname + '/.build',
