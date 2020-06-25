@@ -6,6 +6,7 @@ module.exports = {
     entry: {
         login: './src/loginApp.tsx',
         logout: './src/logoutApp.tsx',
+        user: './src/userApp.tsx'
     },
     plugins: [
         new CleanWebpackPlugin({
@@ -24,7 +25,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/templates/index.html',
             filename: 'user.html',
-            chunks: ['login']
+            chunks: ['user']
         }),
     ],
     output: {
