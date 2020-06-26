@@ -109,5 +109,19 @@ html {
     }
 }
 
-.userTextContent {
+.roleView {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    @media ($mobileLayout) {
+        flex-direction: column;
+    }
 }
+
+.role {
+    @media ($mobileLayout) {
+        width: 65% !important;
+    }
+}
+
+

@@ -13,6 +13,8 @@ export default class CardView extends React.Component<CardViewProps> {
     }
 
     render(): React.ReactNode {
+        const roleWidth = 100 / this.props.user.roles.length;
+        console.log(roleWidth);
         return <div id="cardView">
             <div className="userElement">
                 <div className="userContent">
@@ -29,8 +31,13 @@ export default class CardView extends React.Component<CardViewProps> {
                             <p>{this.props.user.email}</p>
                         </div>
                     </div>
-                    <div id="roleView">
-                        <a className="clickableLink" onClick={this.props.onClickRedirect}>(Hopper)</a>;
+                    <div className="roleView">
+                        {
+                            this.props.user.roles.map((role, i) => {
+                            return (<button className="role" key={i} onClick={this.props.onClickRedirect} style={
+                                {width: `${roleWidth}%`}
+                            }>{role}</button>)
+                        })}
                     </div>
                 </div>
             </div>
