@@ -1,7 +1,8 @@
-
 import React from "react";
 import TopBarView from "./topBarView";
-import {User} from "../api/accountApi";
+import {AccountApi, User} from "../api/accountApi";
+import InfoView from "./infoView";
+import CardView from "./cardView";
 
 type UserViewProps = {
     user: User,
@@ -18,8 +19,9 @@ export default class UserView extends React.Component<UserViewProps> {
     render(): React.ReactNode {
         return <div id="userView">
             <TopBarView onClickLogout={this.props.onClickLogout}
-                        user={this.props.user} />
-            <a className="clickableLink" onClick={this.props.onClickRedirect}>(Hopper)</a>
+                        user={this.props.user}/>
+            <InfoView onClickRedirect={this.props.onClickRedirect}
+                      user={this.props.user}/>
         </div>;
     }
 }

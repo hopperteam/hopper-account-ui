@@ -1,0 +1,113 @@
+@import "res";
+@import "grid";
+
+html {
+    overflow: hidden;
+}
+
+#userView {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #fafafa, #f0f0f0);
+}
+
+#topBar {
+    $topBarSize: 3em;
+    height: $topBarSize;
+    background: $hopperGrad;
+    width: 100%;
+    display: grid;
+    grid-template-columns: $topBarSize auto $topBarSize;
+    box-shadow: 0 0 5px 0 #000000;
+    z-index: 10;
+}
+
+#topBar::before {
+    background-image: url("../img/logo_small_white.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+    @include gridColumn(1, 2);
+    @include gridRow(1, 12);
+    margin: 4px;
+}
+
+#userText {
+    @include gridColumn(9, 13);
+    @include gridCenterVert(5);
+    padding-right: 16px;
+    text-align: right;
+    color: white
+}
+
+.clickableLink {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#infoView {
+    @include gridRootHor;
+    @include gridRootVert;
+    height: 100%;
+}
+
+#cardView {
+    @include gridGlobalCenterHor;
+    @include gridGlobalCenterVert;
+
+    @media ($nonMobileLayout) {
+        //border: 1px solid black;
+        box-shadow: 0 0 15px 0 #000000;
+        border-radius: 4px;
+    }
+
+    background: white;
+
+    @include gridRootVert;
+    @include gridRootHor;
+    overflow: hidden;
+}
+
+.userImage {
+    width: 10rem;
+    height: 10rem;
+    @media ($mobileLayout) {
+        margin-bottom: 8px;
+    }
+    @media ($nonMobileLayout) {
+        margin-right: 8px;
+    }
+    float: left;
+}
+
+.userElement {
+    display: flex;
+    align-items: center;
+    @include gridFillHor;
+    @include gridRow(1, 13);
+}
+
+.userText {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.userContent {
+    padding: 8px 8px 8px;
+    width: 100%;
+}
+
+.mainContent {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    @media ($mobileLayout) {
+        flex-direction: column;
+    }
+}
+
+.userTextContent {
+}

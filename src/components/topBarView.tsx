@@ -9,9 +9,10 @@ type TopBarViewProps = {
 export default class TopBarView extends React.Component<TopBarViewProps> {
 
     render(): React.ReactNode {
-        console.log(this.props.user.firstName);
         return <div id="topBar">
-            <span id="userText">{this.props.user.firstName} {this.props.user.lastName} <a className="clickableLink" onClick={this.props.onClickLogout}>(Logout)</a></span>
+            <span id="userText">{this.props.user.firstName} {this.props.user.lastName}
+                <a className="clickableLink" onClick={this.props.onClickLogout}>(Logout)</a>
+            </span>
         </div>;
     }
 }
