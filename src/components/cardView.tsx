@@ -3,7 +3,7 @@ import {User} from "../api/accountApi";
 
 type CardViewProps = {
     user: User,
-    onClickRedirect: () => void
+    redirect: {}
 }
 
 export default class CardView extends React.Component<CardViewProps> {
@@ -14,7 +14,7 @@ export default class CardView extends React.Component<CardViewProps> {
 
     render(): React.ReactNode {
         const roleWidth = 100 / this.props.user.roles.length;
-        console.log(roleWidth);
+        // @ts-ignore
         return <div id="cardView">
             <div className="userElement">
                 <div className="userContent">
@@ -34,9 +34,14 @@ export default class CardView extends React.Component<CardViewProps> {
                     <div className="roleView">
                         {
                             this.props.user.roles.map((role, i) => {
-                            return (<button className="role" key={i} onClick={this.props.onClickRedirect} style={
-                                {width: `${roleWidth}%`}
-                            }>{role}</button>)
+                                // @ts-ignore
+                                let address = this.props.redirect[role]
+                                return (<button className="role" key={i}
+                                    onClick={function() {
+                                        document.location.assign(address);
+                                    }}
+                                    style={{width: `${roleWidth}%`}
+                                }>{role}</button>);
                         })}
                     </div>
                 </div>

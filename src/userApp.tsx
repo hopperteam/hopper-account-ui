@@ -14,7 +14,7 @@ function renderLoadingView() {
 
 function render(user: User) {
     ReactDOM.render(
-        <UserView onClickLogout={logout} onClickRedirect={hopperRedirect} user={user}/>,
+        <UserView onClickLogout={logout} redirect={hopperRedirect()} user={user}/>,
         document.getElementById("root")
     );
 }
@@ -24,8 +24,12 @@ function logout() {
 }
 
 function hopperRedirect() {
-    // TODO: link to https://app.hoppercloud.net/
-    document.location.assign("https://dev.hoppercloud.net/");
+    let redirect = {
+        "Hopper.User": "https://app.hoppercloud.net/",
+        "HopperDev.User": "https://dev.hoppercloud.net/",
+        "HopperTestSP.User": "https://testsp-dev.hoppercloud.net/"
+    };
+    return redirect;
 }
 
 async function main() {

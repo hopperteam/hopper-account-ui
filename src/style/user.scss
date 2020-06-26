@@ -109,6 +109,12 @@ html {
     }
 }
 
+.userTextContent {
+    @media ($nonMobileLayout) {
+        padding-left: 8px;
+    }
+}
+
 .roleView {
     width: 100%;
     align-items: center;

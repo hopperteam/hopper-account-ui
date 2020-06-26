@@ -4,7 +4,7 @@ import CardView from "./cardView";
 
 type InfoViewProps = {
     user: User,
-    onClickRedirect: () => void
+    redirect: {}
 }
 
 export default class InfoView extends React.Component<InfoViewProps> {
@@ -15,7 +15,7 @@ export default class InfoView extends React.Component<InfoViewProps> {
 
     render(): React.ReactNode {
         return <div id="infoView">
-            <CardView onClickRedirect={this.props.onClickRedirect} user={this.props.user}/>
+            <CardView redirect={this.props.redirect} user={this.props.user}/>
         </div>;
     }
 }
