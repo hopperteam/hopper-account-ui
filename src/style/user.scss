@@ -128,6 +128,9 @@ html {
     @media ($mobileLayout) {
         width: 65% !important;
     }
+    height: 2em;
+    background: $hopperGreen;
+    box-shadow: 0 0 5px 0 #000000;
 }
 
 
