@@ -13,8 +13,7 @@ export default class CardView extends React.Component<CardViewProps> {
     }
 
     render(): React.ReactNode {
-        const roleWidth = 100 / this.props.user.roles.length;
-        // @ts-ignore
+        const roleWidth = 97 / this.props.user.roles.length;
         return <div id="cardView">
             <div className="userElement">
                 <div className="userContent">
