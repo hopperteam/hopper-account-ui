@@ -55,7 +55,7 @@ html {
 
 #cardView {
     @include gridGlobalCenterHor;
-    @include gridGlobalCenterVert;
+    @include gridGlobalCenterVertSmall;
 
     @media ($nonMobileLayout) {
         //border: 1px solid black;

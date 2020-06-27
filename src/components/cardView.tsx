@@ -41,7 +41,7 @@ export default class CardView extends React.Component<CardViewProps> {
                                         document.location.assign(address);
                                     }}
                                     style={{width: `${roleWidth}%`}
-                                }>{role}</button>);
+                                }>{role.replace(".User", "")}</button>);
                         })}
                     </div>
                 </div>
