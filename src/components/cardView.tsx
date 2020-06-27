@@ -22,12 +22,8 @@ export default class CardView extends React.Component<CardViewProps> {
                             require('../img/user.svg')}
                         />
                         <div className="userTextContent">
-                            <p className="userText">First name</p>
-                            <p>{this.props.user.firstName}</p>
-                            <p className="userText">Last name</p>
-                            <p>{this.props.user.lastName}</p>
-                            <p className="userText">Email</p>
-                            <p>{this.props.user.email}</p>
+                            <p className="userText">{this.props.user.firstName} {this.props.user.lastName}</p>
+                            <p className="userText">{this.props.user.email}</p>
                         </div>
                     </div>
                     <div className="roleView">
