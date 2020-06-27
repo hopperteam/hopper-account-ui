@@ -1,5 +1,5 @@
 import React from "react";
-import {AccountApi, User} from "../api/accountApi";
+import {User} from "../api/accountApi";
 import CardView from "./cardView";
 
 type InfoViewProps = {
