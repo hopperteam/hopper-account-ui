@@ -11,7 +11,7 @@ export type User = {
 export class AccountApi extends RestfulApi {
 
     constructor() {
-        super("https://account.hoppercloud.net/api");
+        super("/api");
     }
 
     async login(email: string, password: string): Promise<boolean> {
