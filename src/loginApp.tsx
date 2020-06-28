@@ -26,7 +26,7 @@ function loginComplete() {
         document.location.assign(redirect);
         return;
     }
-    document.location.assign("/overview");
+    document.location.assign("/user.html");
 }
 
 async function main() {

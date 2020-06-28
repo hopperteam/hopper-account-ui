@@ -59,6 +59,18 @@ html, body, #root {
   }
 }
 
+@mixin gridGlobalCenterVertSmall {
+  @include gridRow(1, 13);
+
+  @media ($nonMobileLayout) {
+    @include gridRow(4, 10);
+  }
+
+  @media (min-height: 60em) {
+    @include gridRow(5, 9);
+  }
+}
+
 @mixin gridCenterHor($pad) {
   @include gridColumn($pad+1, 13-$pad);
 }

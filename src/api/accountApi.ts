@@ -4,7 +4,7 @@ export type User = {
     id: string,
     firstName: string,
     lastName: string,
-    eMail: string,
+    email: string,
     roles: string[]
 }
 
@@ -50,6 +50,7 @@ export class AccountApi extends RestfulApi {
         if (!(res.status == 200 && res.result.status == "success")) {
             return null;
         }
-        return res.result;
+        // result includes a result too
+        return res.result.result;
     }
 }
